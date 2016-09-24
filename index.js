@@ -1,0 +1,7 @@
+/**
+ * @author bmcclure
+ */
+
+module.exports = {
+
+};

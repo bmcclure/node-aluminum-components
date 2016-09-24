@@ -1,0 +1,38 @@
+{
+    "name": "aluminum-components",
+    "version": "0.1.0",
+    "description": "A set of reusable web components (JS, SCSS mixins and styles, and template examples) for quickly building custom themes and web applications.",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TopFloorTech/node-aluminum-components"
+    },
+    "author": {
+        "name": "Ben McClure",
+        "email": "ben.mcclure@gmail.com",
+        "url": "http://www.topfloortech.com"
+    },
+    "files": [
+        "index.js",
+        "sass",
+        "js"
+    ],
+    "engines": {
+        "node": ">=0.10.0"
+    },
+    "keywords": [
+        "eyeglass-module",
+        "sass"
+    ],
+    "dependencies": {
+        "bourbon": "^4.2.7",
+        "bourbon-neat": "^1.8.0"
+    },
+    "devDependencies": {},
+    "eyeglass": {
+        "exports": false,
+        "name": "aluminum-components",
+        "needs": "*",
+        "sassDir": "sass"
+    }
+}

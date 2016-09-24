@@ -1,0 +1,101 @@
+.AccordionTabs {
+    $base-borderColor: #dcdcdc !default;
+    $base-borderRadius: 3px !default;
+    $base-backgroundColor: #fff !default;
+    $base-spacing: 1.5em !default;
+    $action-color: #477dca !default;
+    $darkGray: #333 !default;
+    $lightGray: #ddd !default;
+    $medium-screen: 40em !default;
+
+    $AccordionTabs-tabBorder: 1px solid $base-borderColor !default;
+    $AccordionTabs-contentBackground: lighten($lightGray, 10) !default;
+    $AccordionTabs-tabBackground: $base-backgroundColor !default;
+    $AccordionTabs-tabBackground--active: $AccordionTabs-contentBackground !default;
+    $AccordionTabs-hoverColor: darken($lightGray, 5) !default;
+    $AccordionTabs-tabMode: $medium-screen !default;
+
+    @include clearfix;
+    line-height: 1.5;
+    margin-bottom: $base-spacing;
+    padding: 0;
+
+    @include media(max-width $AccordionTabs-tabMode) {
+        border: $AccordionTabs-tabBorder;
+        border-radius: $base-borderRadius;
+    }
+
+    .AccordionTabs-tabContainer {
+        list-style: none;
+
+        @include media($AccordionTabs-tabMode) {
+            display: inline;
+        }
+
+        &:first-child .AccordionTabs-tabHeader {
+            border-top-left-radius: $base-borderRadius;
+            border-top-right-radius: $base-borderRadius;
+
+            @include media(max-width $AccordionTabs-tabMode) {
+                border-top: 0;
+            }
+        }
+
+        &:last-child .AccordionTabs-tabHeader {
+            @include media(max-width $AccordionTabs-tabMode) {
+                border-bottom-left-radius: $base-borderRadius;
+                border-bottom-right-radius: $base-borderRadius;
+            }
+        }
+    }
+
+    .AccordionTabs-tabHeader {
+        background-color: $AccordionTabs-tabBackground;
+        border-top: $AccordionTabs-tabBorder;
+        color: $darkGray;
+        display: block;
+        font-weight: bold;
+        padding: ($base-spacing / 2) ($gutter / 2);
+        text-decoration: none;
+
+        @include media($AccordionTabs-tabMode) {
+            @include border-top-radius($base-borderRadius);
+            border-top: 0;
+            display: inline-block;
+        }
+
+        &:hover {
+            color: $action-color;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &.is-active {
+            background-color: $AccordionTabs-tabBackground--active;
+
+            @include media($AccordionTabs-tabMode) {
+                background-color: $AccordionTabs-tabBackground--active;
+                border: $AccordionTabs-tabBorder;
+                border-bottom-color: $AccordionTabs-tabBackground--active;
+                margin-bottom: -1px;
+            }
+        }
+    }
+
+    .AccordionTabs-tabContent {
+        background: $AccordionTabs-contentBackground;
+        display: none;
+        padding: $base-spacing $gutter;
+        width: 100%;
+
+        @include media($AccordionTabs-tabMode) {
+            border: $AccordionTabs-tabBorder;
+            border-bottom-left-radius: $base-borderRadius;
+            border-bottom-right-radius: $base-borderRadius;
+            border-top-right-radius: $base-borderRadius;
+            float: left;
+        }
+    }
+}
