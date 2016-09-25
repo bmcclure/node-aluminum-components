@@ -1,0 +1,35 @@
+$large-screen: 53.75em !default;
+
+@mixin DeviceTeaser(
+    $minHeight: 20em,
+    $breakpoint: $large-screen,
+    $componentName: "DeviceTeaser"
+) {
+    .#{$componentName} {
+
+        background-size: cover;
+        min-height: $minHeight;
+        width: 100%;
+
+        .#{$componentName}-content {
+            padding: 2em;
+
+            @include media($breakpoint) {
+                float: left;
+                max-width: 50%;
+                padding: 4em;
+            }
+
+            .#{$componentName}-title {
+                font-size: 1.5em;
+                margin: 0 0 0.5em 0;
+                padding-bottom: 0.5em;
+            }
+
+            .#{$componentName}-copy {
+                line-height: 1.5em;
+                margin-bottom: 1.5em;
+            }
+        }
+    }
+}

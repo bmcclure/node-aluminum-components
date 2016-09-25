@@ -1,0 +1,12 @@
+$base-borderColor: gainsboro !default;
+
+$Card-borderColor: $base-borderColor !default;
+$Card-border: 1px solid $Card-borderColor !default;
+$Card-margin: 1em !default;
+
+@import "../mixins/Card";
+
+@include Card(
+    $border: $Card-border,
+    $margin: $Card-margin
+);

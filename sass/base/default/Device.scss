@@ -1,0 +1,17 @@
+$Device-verticalPadding: 5em !default;
+$Device-horizontalPadding: 0.4em !default;
+$Device-background: darken(gray, 40%) !default;
+$Device-screenWidth: 14em !default;
+$Device-screenHeight: 25em !default;
+$Device-screenImage: "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/cosmin_capitanu_screen.jpg" !default;
+
+@import "../mixins/Device";
+
+@include Device(
+    $Device-screenImage,
+    $background: $Device-background,
+    $screenWidth: $Device-screenWidth,
+    $screenHeight: $Device-screenHeight,
+    $verticalPadding: $Device-verticalPadding,
+    $horizontalPadding: $Device-horizontalPadding
+);

@@ -1,0 +1,61 @@
+$base-spacing: 1.5em !default;
+$darkGray: #333 !default;
+$base-fontColor: $darkGray !default;
+
+@mixin Comment(
+    $gutter: 1.4em,
+    $imagePadding: 0.7em,
+    $imageWidth: 4em,
+    $imageVerticalAlign: top,
+    $marginBottom: $base-spacing,
+    $componentName: "Comment"
+) {
+    .#{$componentName} {
+        display: table;
+        margin-bottom: $marginBottom;
+        padding-bottom: 1em;
+        width: 100%;
+
+        .#{$componentName}-imageContainer,
+        .#{$componentName}-content {
+            display: table-cell;
+            vertical-align: $imageVerticalAlign;
+        }
+
+        .#{$componentName}-imageContainer {
+            padding-right: $gutter;
+
+            > .#{$componentName}-image {
+                display: block;
+                height: auto;
+                max-width: none;
+                padding: $imagePadding;
+                width: $imageWidth;
+            }
+
+            .#{$componentName}--reverse-order & {
+                padding-left: 10px;
+                padding-right: 0;
+            }
+        }
+
+        .#{$componentName}-content {
+            width: 100%;
+
+            .#{$componentName}-title {
+                font-size: 1em;
+                margin: 0 0 0.5em 0;
+            }
+
+            p,
+            .#{$componentName}-copy {
+                line-height: 1.5em;
+                margin-bottom: 0.5em;
+            }
+
+            .#{$componentName}-detail {
+                font-size: 0.9em;
+            }
+        }
+    }
+}

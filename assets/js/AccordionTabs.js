@@ -4,14 +4,14 @@
 $(document).ready(function () {
     var tabs = $('.AccordionTabs');
 
-    tabs.each(function(index) {
+    tabs.each(function() {
         $(this)
             .children('.AccordionTabs-tabContainer').first()
             .children('.AccordionTabs-tabHeader').addClass('is-active')
             .next().addClass('is-open').show();
     });
 
-    tabs.on('click', '.AccordionTabs-tabContainer > .AccordionTabs-tabHeader', function(event) {
+    tabs.on('click', ' > .AccordionTabs-tabContainer > .AccordionTabs-tabHeader', function(event) {
         var tabHeader = $(this);
         event.preventDefault();
 

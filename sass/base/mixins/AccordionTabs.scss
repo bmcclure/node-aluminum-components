@@ -1,0 +1,75 @@
+$medium-screen: 40em !default;
+$base-backgroundColor: #fff !default;
+$base-borderColor: #dcdcdc !default;
+$darkGray: #333 !default;
+$base-spacing: 1.5em !default;
+$action-color: #477dca !default;
+
+@mixin AccordionTabs(
+    $tabMode: $medium-screen,
+    $tabGutter: $gutter,
+    $spacing: $base-spacing,
+    $tabColor: $darkGray,
+    $tabColor--hover: $action-color,
+    $tabBorder: 1px solid $base-borderColor,
+    $tabBackground: $base-backgroundColor,
+    $tabBackground--active: $base-backgroundColor,
+    $componentName: "AccordionTabs"
+) {
+    .#{$componentName} {
+        @include clearfix;
+        line-height: 1.5;
+        padding: 0;
+
+        .#{$componentName}-tabContainer {
+            list-style: none;
+
+            @include media($tabMode) {
+                display: inline;
+            }
+        }
+
+        .#{$componentName}-tabHeader {
+            background-color: $tabBackground;
+            border-top: $tabBorder;
+            color: $tabColor;
+            display: block;
+            padding: ($spacing / 2) $tabGutter;
+            text-decoration: none;
+
+            @include media($tabMode) {
+                border-top: 0;
+                display: inline-block;
+            }
+
+            &:hover {
+                color: $action-color;
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            &.is-active {
+                border-bottom: 0;
+
+                @include media($tabMode) {
+                    border: $tabBorder;
+                    border-bottom-color: $tabBackground--active;
+                    margin-bottom: -1px;
+                }
+            }
+        }
+
+        .#{$componentName}-tabContent {
+            display: none;
+            padding: $spacing $tabGutter;
+            width: 100%;
+
+            @include media($tabMode) {
+                border-top: $tabBorder;
+                float: left;
+            }
+        }
+    }
+}

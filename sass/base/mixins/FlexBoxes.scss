@@ -1,0 +1,28 @@
+$FlexBoxes-defaultTopColors:
+    tomato,
+    #72BFBF,
+    #92B1E3,
+    #E3D743,
+    #CCC,
+    #F6C05C;
+
+@mixin FlexBoxes(
+    $topColors: $FlexBoxes-defaultTopColors,
+    $componentName: "FlexBoxes"
+) {
+    .#{$componentName} {
+        .#{$componentName}-box {
+            @for $i from 1 to 7 { // assign colors from $topColors list
+                &:nth-child(#{$i}) {
+                    $colorFromList: nth($topColors, $i);
+                    border-top: 6px solid $colorFromList;
+
+                    &:focus,
+                    &:hover {
+                        background-color: transparentize($colorFromList, 0.9);
+                    }
+                }
+            }
+        }
+    }
+}

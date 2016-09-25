@@ -1,0 +1,37 @@
+$darkGray: #333 !default;
+$base-borderRadius: 3px !default;
+$base-fontColor: $darkGray !default;
+$large-screen: 53.75em !default;
+$horizontal-bar-mode: $large-screen !default;
+
+$CenteredNavigation-padding: 1em !default;
+$CenteredNavigation-logoHeight: 2em !default;
+$CenteredNavigation-height: 60px !default;
+$CenteredNavigation-itemPadding: 1em !default;
+$CenteredNavigation-subMenuPadding: 1em !default;
+$CenteredNavigation-subMenuWidth: 12em !default;
+$CenteredNavigation-itemNudge: 2.2em !default;
+$CenteredNavigation-color: transparentize($base-fontColor, 0.3) !default;
+$CenteredNavigation-color--hover: $base-fontColor !default;
+$CenteredNavigation-borderColor: #E7F1EC !default;
+$CenteredNavigation-breakpoint: $large-screen !default;
+$CenteredNavigation-background: lighten($CenteredNavigation-borderColor, 6%) !default;
+$CenteredNavigation-horizontalBarMode: $horizontal-bar-mode !default;
+
+@import "../mixins/CenteredNavigation";
+
+@include CenteredNavigation--standard(
+    $borderColor: $CenteredNavigation-borderColor,
+    $padding: $CenteredNavigation-padding,
+    $logoHeight: $CenteredNavigation-logoHeight,
+    $height: $CenteredNavigation-height,
+    $itemPadding: $CenteredNavigation-itemPadding,
+    $subMenuPadding: $CenteredNavigation-subMenuPadding,
+    $subMenuWidth: $CenteredNavigation-subMenuWidth,
+    $itemNudge: $CenteredNavigation-itemNudge,
+    $breakpoint: $CenteredNavigation-breakpoint,
+    $horizontalBarMode: $CenteredNavigation-horizontalBarMode,
+    $color: $CenteredNavigation-color,
+    $color--hover: $CenteredNavigation-color--hover,
+    $background: $CenteredNavigation-background
+);

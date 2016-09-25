@@ -1,0 +1,246 @@
+
+$large-screen: 53.75em !default;
+$horizontal-bar-mode: $large-screen !default;
+
+@mixin CenteredNavigation(
+    $borderColor: #ced8d3,
+    $padding: 1em,
+    $logoHeight: 2em,
+    $height: 60px,
+    $itemPadding: 1em,
+    $subMenuPadding: 1em,
+    $subMenuWidth: 12em,
+    $itemNudge: 2.2em,
+    $breakpoint: $large-screen,
+    $horizontalBarMode: $horizontal-bar-mode,
+    $componentName: "CenteredNavigation"
+) {
+    .#{$componentName} {
+        border-bottom: 1px solid $borderColor;
+        min-height: $height;
+        width: 100%;
+        z-index: 9999;
+
+        // Mobile view
+
+        .#{$componentName}-mobileLogoLink {
+            display: inline;
+            float: left;
+            max-height: $height;
+            padding-left: $padding;
+
+            .#{$componentName}-mobileLogo {
+                max-height: $height;
+                opacity: 0.6;
+                padding: 0.8em 0;
+            }
+
+            @include media($horizontalBarMode) {
+                display: none;
+            }
+        }
+
+        .#{$componentName}-mobileMenu {
+            display: block;
+            float: right;
+            line-height: $height;
+            margin: 0;
+            padding-right: $subMenuPadding;
+
+            @include media ($horizontalBarMode) {
+                display: none;
+            }
+        }
+
+        // Nav menu
+
+        .#{$componentName}-menuWrapper {
+            @include outer-container;
+            @include clearfix;
+            position: relative;
+            z-index: 999;
+        }
+
+        .#{$componentName}-menu {
+            clear: both;
+            display: none;
+            margin: 0 auto;
+            overflow: visible;
+            padding: 0;
+            -webkit-transform-style: preserve-3d; // stop webkit flicker
+            width: 100%;
+            z-index: 99999;
+
+            &.#{$componentName}-menu--show {
+                display: block;
+            }
+
+            @include media ($horizontalBarMode) {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        // The nav items
+
+        .#{$componentName}-navItem:first-child {
+            @include media($horizontalBarMode) {
+                margin-left: $itemNudge;
+            }
+        }
+
+        .#{$componentName}-navItem {
+            display: block;
+            line-height: $height;
+            overflow: hidden;
+            padding-right: $subMenuPadding;
+            text-align: right;
+            width: 100%;
+            z-index: 9999;
+
+            .#{$componentName}-menuLink {
+                display: inline-block;
+                outline: none;
+                text-decoration: none;
+            }
+
+            @include media($horizontalBarMode) {
+                display: inline;
+                line-height: $height;
+
+                .#{$componentName}-menuLink {
+                    padding-right: $itemPadding;
+                }
+            }
+        }
+
+        .#{$componentName}-navItem--logo {
+            display: none;
+            line-height: 0;
+
+            @include media($horizontalBarMode) {
+                display: inline;
+            }
+        }
+
+        .#{$componentName}-logo {
+            margin-bottom: -$logoHeight / 3;
+            max-height: $logoHeight;
+        }
+
+        // Sub menus
+
+        .#{$componentName}-navItem--more {
+            padding-right: 0;
+
+            @include media($breakpoint) {
+                padding-right: $subMenuPadding;
+            }
+
+            > .#{$componentName}-subMenu > .#{$componentName}-subMenuItem:first-child .#{$componentName}-subMenuLink  {
+                padding-top: 1em;
+            }
+
+            .#{$componentName}-subMenuLink {
+                margin-right: $subMenuPadding;
+            }
+
+            > .#{$componentName}-subMenuLink {
+                padding-right: 0.6em;
+
+                &::after {
+                    @include position(absolute, auto -0.4em auto auto);
+                    content: "\25BE";
+                }
+            }
+        }
+
+        .#{$componentName}-navItem--more,
+        .#{$componentName}-subMenuItem--more {
+            overflow: visible;
+            padding-right: 0;
+
+            .#{$componentName}-subMenuLink,
+            .#{$componentName}-menuLink {
+                padding-right: $subMenuPadding;
+            }
+
+            > .#{$componentName}-subMenuLink,
+            > .#{$componentName}-menuLink {
+                padding-right: 1.6em;
+                position: relative;
+
+                @include media($breakpoint) {
+                    margin-right: $subMenuPadding;
+                }
+
+                &::after {
+                    content: "›";
+                    font-size: 1.2em;
+                    position: absolute;
+                    right: $subMenuPadding / 2;
+                }
+            }
+
+            &:focus > .#{$componentName}-subMenu,
+            &:hover > .#{$componentName}-subMenu {
+                display: block;
+            }
+
+            @include media($horizontalBarMode) {
+                padding-right: $subMenuPadding;
+                position: relative;
+            }
+        }
+
+        .#{$componentName}-subMenu {
+            display: none;
+            padding-left: 0;
+
+            @include media($horizontalBarMode) {
+                left: -$subMenuPadding;
+                position: absolute;
+                top: 1.5em;
+            }
+
+            .#{$componentName}-subMenu--flyOutRight {
+                @include media($horizontalBarMode) {
+                    left: $subMenuWidth - 0.2em;
+                    top: 0;
+                }
+            }
+
+            .#{$componentName}-subMenu--flyOutLeft {
+                @include media($horizontalBarMode) {
+                    left: -$subMenuWidth + 0.2em;
+                    top: 0;
+                }
+            }
+
+            .#{$componentName}-subMenuItem {
+                display: block;
+                padding-right: 0;
+
+                @include media($horizontalBarMode) {
+                    line-height: $height / 1.3;
+
+                    &:last-child > .#{$componentName}-subMenuLink {
+                        padding-bottom: 0.7em;
+                    }
+                }
+
+                .#{$componentName}-subMenuLink {
+                    display: inline-block;
+                    text-align: right;
+                    width: 100%;
+
+                    @include media($horizontalBarMode) {
+                        padding-left: $subMenuPadding;
+                        text-align: left;
+                        width: $subMenuWidth;
+                    }
+                }
+            }
+        }
+    }
+}

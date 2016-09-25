@@ -1,0 +1,72 @@
+$base-spacing: 1.5em !default;
+$base-borderRadius: 3px !default;
+$lightGray: #ddd !default;
+$medium-screen: 40em !default;
+$base-borderColor: #dcdcdc !default;
+$tab-mode: $medium-screen !default;
+
+@mixin AccordionTabs--standard(
+    $tabMode: $medium-screen,
+    $tabGutter: $gutter,
+    $spacing: $base-spacing,
+    $tabBorder: 1px solid $base-borderColor,
+    $contentBackground: lighten($lightGray, 10),
+    $tabBackground--active: $contentBackground,
+    $borderRadius: $base-borderRadius,
+    $componentName: "AccordionTabs"
+) {
+    .#{$componentName}--standard {
+        margin-bottom: $spacing;
+
+        @include media(max-width $tabMode) {
+            border: $tabBorder;
+            border-radius: $borderRadius;
+        }
+
+        .#{$componentName}-tabContainer {
+            &:first-child .#{$componentName}-tabHeader {
+                border-top-left-radius: $borderRadius;
+                border-top-right-radius: $borderRadius;
+
+                @include media(max-width $tabMode) {
+                    border-top: 0;
+                }
+            }
+
+            &:last-child .#{$componentName}-tabHeader {
+                @include media(max-width $tabMode) {
+                    border-bottom-left-radius: $borderRadius;
+                    border-bottom-right-radius: $borderRadius;
+                }
+            }
+        }
+
+        .#{$componentName}-tabHeader {
+            font-weight: bold;
+            padding: ($spacing / 2) ($tabGutter / 2);
+
+            @include media($tabMode) {
+                @include border-top-radius($borderRadius);
+            }
+
+            &.is-active {
+                background-color: $tabBackground--active;
+
+                @include media($tabMode) {
+                    background-color: $tabBackground--active;
+                }
+            }
+        }
+
+        .#{$componentName}-tabContent {
+            background: $contentBackground;
+
+            @include media($tabMode) {
+                border: $tabBorder;
+                border-bottom-left-radius: $borderRadius;
+                border-bottom-right-radius: $borderRadius;
+                border-top-right-radius: $borderRadius;
+            }
+        }
+    }
+}

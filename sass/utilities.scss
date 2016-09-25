@@ -1,0 +1,10 @@
+.u-show {
+    display: block !important;
+}
+
+.u-more {
+    &::after {
+        @include position(absolute, auto -0.4em auto auto);
+        content: "\25BE";
+    }
+}

@@ -1,0 +1,31 @@
+$base-borderRadius: 3px !default;
+$base-borderColor: gainsboro !default;
+$base-backgroundColor: white !default;
+$darkGray: #333 !default;
+$base-fontColor: $darkGray !default;
+
+$Card-borderColor: $base-borderColor !default;
+$Card-border: 1px solid $Card-borderColor !default;
+$Card-margin: 1em !default;
+$Card-fontColor: $base-fontColor !default;
+$Card-borderColor: $base-borderColor !default;
+$Card-background: lighten($Card-borderColor, 10%) !default;
+$Card-headerImageBackground: $Card-background !default;
+$Card-imageHoverOpacity: 0.7 !default;
+$Card-imageHoverOpacity: #F8F2B4 !default;
+$Card-borderRadius: $base-borderRadius;
+
+@import "../mixins/Card";
+
+@include Card--standard(
+    $border: $Card-border,
+    $margin: $Card-margin,
+    $fontColor: $Card-fontColor,
+    $borderColor: $Card-borderColor,
+    $background: $Card-background,
+    $headerImageBackground: $Card-headerImageBackground,
+    $imageHoverOpacity: 0.7,
+    $imageHoverOpacity: $Card-imageHoverOpacity,
+    $borderRadius: $Card-borderRadius,
+    $boxShadowColor: darken($base-backgroundColor, 10%)
+);

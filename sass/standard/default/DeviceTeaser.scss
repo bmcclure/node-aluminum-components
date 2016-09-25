@@ -1,0 +1,20 @@
+$base-borderRadius: 3px !default;
+$action-color: #477DCA !default;
+$large-screen: 53.75em !default;
+
+$DeviceTeaser-textColor: white !default;
+$DeviceTeaser-backgroundTopColor: #162C4C !default;
+$DeviceTeaser-backgroundBottomColor: #0A120D !default;
+$DeviceTeaser-minHeight: 20em !default;
+$DeviceTeaser-gradientAngle: 10deg !default;
+$DeviceTeaser-breakpoint: $large-screen !default;
+$DeviceTeaser-deviceImage: "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" !default;
+
+@import "../mixins/DeviceTeaser";
+
+@include DeviceTeaser--standard(
+    $background: asset-url($DeviceTeaser-deviceImage) linear-gradient($DeviceTeaser-gradientAngle, $DeviceTeaser-backgroundBottomColor, $DeviceTeaser-backgroundTopColor) no-repeat scroll,
+    $minHeight: $DeviceTeaser-minHeight,
+    $breakpoint: $DeviceTeaser-breakpoint,
+    $textColor: $DeviceTeaser-textColor
+);

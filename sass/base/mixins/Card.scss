@@ -1,0 +1,51 @@
+$base-borderColor: gainsboro !default;
+$base-spacing: 1.5em !default;
+
+@mixin Card(
+    $spacing: $base-spacing,
+    $border: 1px solid $base-borderColor,
+    $margin: 1em,
+    $componentName: "Card"
+) {
+    .#{$componentName} {
+        border: $border;
+        cursor: pointer;
+        flex-basis: 15em;
+        flex-grow: 1;
+        margin: 0 $margin $spacing $margin;
+        position: relative;
+
+        .#{$componentName}-imageContainer {
+            height: 150px;
+            max-height: 150px;
+            overflow: hidden;
+        }
+
+        .#{$componentName}-image {
+            opacity: 1;
+            width: 100%;
+        }
+
+        .#{$componentName}-header {
+            border-bottom: $border;
+            font-weight: bold;
+            line-height: 1.5em;
+            padding: ($spacing / 3) ($spacing / 2);
+        }
+
+        .#{$componentName}-content {
+            font-size: 0.9em;
+            line-height: 1.5em;
+            padding: ($spacing / 2) ($spacing / 2);
+        }
+
+        .#{$componentName}-copy {
+            margin: 0 0 ($spacing / 2);
+        }
+
+        &:focus,
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

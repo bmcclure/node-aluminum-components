@@ -1,0 +1,55 @@
+$base-borderColor: gainsboro !default;
+$base-borderRadius: 3px !default;
+$base-backgroundColor: white !default;
+$darkGray: #333 !default;
+$base-fontColor: $darkGray !default;
+
+@mixin Card--standard(
+    $fontColor: $base-fontColor,
+    $borderColor: $base-borderColor,
+    $background: lighten($borderColor, 10%),
+    $headerImageBackground: $background,
+    $imageHoverOpacity: 0.7,
+    $imageHoverOpacity: #F8F2B4,
+    $borderRadius: $base-borderRadius,
+    $boxShadowColor: darken($base-backgroundColor, 10%),
+    $componentName: "Card"
+) {
+    .#{$componentName}--standard {
+        background: $background;
+        border-radius: $borderRadius;
+        box-shadow: 0 2px 4px $boxShadowColor;
+        color: $fontColor;
+        transition: all 0.2s ease-in-out;
+
+        .#{$componentName}-imageContainer {
+            background-color: $imageHoverOpacity;
+        }
+
+        .#{$componentName}-image {
+            @include border-top-radius($borderRadius);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .#{$componentName}-header {
+            background-color: $headerImageBackground;
+            border-radius: $borderRadius $borderRadius 0 0;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &:focus,
+        &:hover {
+            .#{$componentName}-image {
+                opacity: $imageHoverOpacity;
+            }
+        }
+
+        &:active {
+            background-color: $background;
+
+            .#{$componentName}-header {
+                background-color: $background;
+            }
+        }
+    }
+}

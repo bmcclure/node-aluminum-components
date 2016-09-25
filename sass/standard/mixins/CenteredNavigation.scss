@@ -1,0 +1,85 @@
+$darkGray: #333 !default;
+$base-borderRadius: 3px !default;
+$base-fontColor: $darkGray !default;
+$large-screen: 53.75em !default;
+$horizontal-bar-mode: $large-screen !default;
+$base-borderColor: #E7F1EC;
+
+@mixin CenteredNavigation--standard(
+    $horizontalBarMode: $horizontal-bar-mode,
+    $color: transparentize($base-fontColor, 0.3),
+    $color--hover: $base-fontColor,
+    $background: lighten($base-borderColor, 6%),
+    $componentName: "CenteredNavigation"
+) {
+    .#{$componentName}--standard {
+        background-color: $background;
+
+        .#{$componentName}-mobileMenu {
+            color: $color;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            &:focus,
+            &:hover {
+                color: $color--hover;
+            }
+        }
+
+        .#{$componentName}-navItem {
+            background: $background;
+
+            .#{$componentName}-menuLink {
+                color: $color;
+
+                &:focus,
+                &:hover {
+                    color: $color--hover;
+                }
+            }
+
+            @include media($horizontalBarMode) {
+                background: transparent;
+            }
+        }
+
+        .#{$componentName}-logo {
+            opacity: 0.6;
+        }
+
+        .#{$componentName}-navItem--more {
+            > .#{$componentName}-subMenuLink {
+                padding-right: 0.6em;
+
+                &::after {
+                    color: $color;
+                }
+            }
+        }
+
+        .#{$componentName}-subMenu {
+            .#{$componentName}-subMenuItem {
+                @include media($horizontalBarMode) {
+                    &:first-child > .#{$componentName}-subMenuLink {
+                        border-top-left-radius: $base-borderRadius;
+                        border-top-right-radius: $base-borderRadius;
+                    }
+
+                    &:last-child > .#{$componentName}-subMenuLink {
+                        border-bottom-left-radius: $base-borderRadius;
+                        border-bottom-right-radius: $base-borderRadius;
+                    }
+                }
+
+                .#{$componentName}-subMenuLink {
+                    background-color: darken($background, 3%);
+                    text-decoration: none;
+
+                    @include media($horizontalBarMode) {
+                        background-color: $background;
+                    }
+                }
+            }
+        }
+    }
+}

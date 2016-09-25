@@ -1,0 +1,36 @@
+@mixin FlexBox(
+    $gutter: 0.4em,
+    $width: 18em,
+    $componentName: "FlexBox"
+) {
+    .#{$componentName} {
+        align-self: stretch;
+        display: block;
+        flex: 2 2 15em;
+        margin: $gutter;
+        padding: 2em 2em 3em 2em;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+
+        .#{$componentName}-image {
+            display: block;
+            height: 3em;
+            margin: 0 auto 1em;
+            opacity: 0.4;
+        }
+
+        .#{$componentName}-title {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+
+        .#{$componentName}-content {
+            line-height: 1.5em;
+            margin: auto;
+        }
+    }
+
+    .#{$componentName}-big {
+        flex: 1 1 40em;
+    }
+}

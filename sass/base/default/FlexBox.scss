@@ -1,0 +1,27 @@
+$base-borderRadius: 3px !default;
+$base-backgroundColor: white !default;
+$darkGray: #333 !default;
+$lightGray: #DDD !default;
+$base-fontColor: $darkGray !default;
+
+$FlexBox-borderRadius: $base-borderRadius !default;
+$FlexBox-borderColor: $lightGray !default;
+$FlexBox-border: 1px solid $FlexBox-borderColor !default;
+$FlexBox-boxShadowColor: darken($base-backgroundColor, 10%) !default;
+$FlexBox-background: lighten($lightGray, 10%) !default;
+$FlexBox-gutter: 0.4em !default;
+$FlexBox-width: 18em !default;
+$FlexBox-color: transparentize($base-fontColor, 0.3);
+
+@import "../mixins/FlexBox";
+
+@include FlexBox(
+    $borderRadius: $FlexBox-borderRadius,
+    $borderColor: $FlexBox-borderColor,
+    $border: $FlexBox-border,
+    $boxShadowColor: $FlexBox-boxShadowColor,
+    $background: $FlexBox-background,
+    $gutter: $FlexBox-gutter,
+    $width: $FlexBox-width,
+    $color: $FlexBox-color
+);

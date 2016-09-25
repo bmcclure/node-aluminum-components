@@ -1,0 +1,43 @@
+$base-borderColor: #dcdcdc !default;
+$base-backgroundColor: #fff !default;
+$action-color: #477dca !default;
+$darkGray: #333 !default;
+$medium-screen: 40em !default;
+$tab-mode: $medium-screen !default;
+$base-spacing: 1.5em !default;
+$base-borderRadius: 3px !default;
+$lightGray: #ddd !default;
+
+$AccordionTabs-tabColor: $darkGray !default;
+$AccordionTabs-tabColor--hover: $action-color !default;
+$AccordionTabs-tabBorder: 1px solid $base-borderColor !default;
+$AccordionTabs-tabBackground: $base-backgroundColor !default;
+$AccordionTabs-contentBackground: lighten($lightGray, 10) !default;
+$AccordionTabs-tabBackground--active: $AccordionTabs-contentBackground !default;
+$AccordionTabs-tabMode: $tab-mode !default;
+$AccordionTabs-borderRadius: $base-borderRadius !default;
+
+@import "../../base/mixins/AccordionTabs";
+@import "../mixins/AccordionTabs";
+
+@include AccordionTabs(
+    $tabMode: $medium-screen,
+    $tabGutter: $gutter,
+    $spacing: $base-spacing,
+    $tabColor: $darkGray,
+    $tabColor--hover: $action-color,
+    $tabBorder: 1px solid $base-borderColor,
+    $tabBackground: $base-backgroundColor,
+    $tabBackground--active: $base-backgroundColor
+);
+
+@include AccordionTabs--standard(
+    $tabMode: $AccordionTabs-tabMode,
+    $tabColor: $AccordionTabs-tabColor,
+    $tabColor--hover: $AccordionTabs-tabColor--hover,
+    $tabBorder: $AccordionTabs-tabBorder,
+    $tabBackground: $AccordionTabs-tabBackground,
+    $borderRadius: $AccordionTabs-borderRadius,
+    $contentBackground: $AccordionTabs-contentBackground,
+    $tabBackground--active: $AccordionTabs-tabBackground--active
+)

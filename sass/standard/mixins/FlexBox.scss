@@ -1,0 +1,29 @@
+$base-borderRadius: 3px !default;
+$base-backgroundColor: white !default;
+$darkGray: #333 !default;
+$lightGray: #DDD !default;
+$base-fontColor: $darkGray !default;
+
+@mixin FlexBox--standard(
+    $borderColor: $lightGray,
+    $border: 1px solid $borderColor,
+    $borderRadius: $base-borderRadius,
+    $boxShadowColor: darken($base-backgroundColor, 10%),
+    $background: lighten($lightGray, 10%),
+    $color: transparentize($base-fontColor, 0.3),
+    $componentName: "FlexBox"
+) {
+    .#{$componentName}--standard {
+        background: $background;
+        border-radius: $borderRadius;
+        box-shadow: inset 0 0 1px $borderColor, 0 2px 4px $boxShadowColor;
+
+        .#{$componentName}-title {
+            color: $color;
+        }
+
+        .#{$componentName}-content {
+            color: transparentize($color, 0.1);
+        }
+    }
+}

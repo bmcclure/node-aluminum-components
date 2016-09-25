@@ -1,0 +1,18 @@
+@mixin DeviceTeaser--standard(
+    $background,
+    $textColor: white,
+    $componentName: "DeviceTeaser"
+) {
+    .#{$componentName}--standard {
+        background: $background;
+
+        .#{$componentName}-title {
+            border-bottom: 1px solid transparentize($textColor, 0.7);
+            color: $textColor;
+        }
+
+        .#{$componentName}-copy {
+            color: $textColor;
+        }
+    }
+}

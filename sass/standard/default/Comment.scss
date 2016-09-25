@@ -1,0 +1,31 @@
+$base-spacing: 1.5em !default;
+$darkGray: #333 !default;
+$base-fontColor: $darkGray !default;
+$base-borderRadius: 3px !default;
+$action-color: #477DCA !default;
+
+$Comment-borderColor: $base-fontColor !default;
+$Comment-borderBottom: 1px solid transparentize($Comment-borderColor, 0.9) !default;
+$Comment-gutter: 1.4em !default;
+$Comment-imagePadding: 0.7em !default;
+$Comment-imageWidth: 4em !default;
+$Comment-imageVerticalAlign: top !default;
+$Comment-marginBottom: $base-spacing !default;
+$Comment-color: $base-fontColor !default;
+$Comment-background: lighten($action-color, 15%) !default;
+$Comment-detailColor: transparentize($Comment-color, 0.5) !default;
+
+@import "../mixins/Comment";
+
+@include Comment--standard(
+    $borderColor: $Comment-borderColor,
+    $borderBottom: $Comment-borderBottom,
+    $gutter: $Comment-gutter,
+    $imagePadding: $Comment-imagePadding,
+    $imageWidth: $Comment-imageWidth,
+    $imageVerticalAlign: $Comment-imageVerticalAlign,
+    $marginBottom: $Comment-marginBottom,
+    $color: $Comment-color,
+    $background: $Comment-background,
+    $detailColor: $Comment-detailColor
+);

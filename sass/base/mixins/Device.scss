@@ -1,0 +1,46 @@
+$large-screen: 53.75em !default;
+
+@mixin Device(
+    $screenImage,
+    $background: darken(gray, 40%),
+    $screenWidth: 14em,
+    $screenHeight: 25em,
+    $verticalPadding: 5em,
+    $horizontalPadding: 0.4em,
+    $breakpoint: $large-screen,
+    $componentName: "Device"
+) {
+    .#{$componentName} {
+        $background--backside: darken($background, 10%) !default;
+
+        display: none;
+        position: relative;
+
+        @include media($breakpoint) {
+            background: $background;
+            border-radius: 2em;
+            box-shadow: 1px 0 lighten($background--backside, 20%),
+            4px 0 lighten($background--backside, 2%),
+            7px 0 $background--backside,
+            10px 0 $background--backside,
+            13px 0 $background--backside;
+            display: block;
+            float: right;
+            margin-bottom: -12em;
+            margin-right: 5em;
+            padding: $verticalPadding 0;
+            transform: perspective(800px) translateX(0) translateY(-100px) translateZ(50px) rotateX(0) rotateY(-20deg) rotateZ(0);
+            width: $screenWidth + (2 * $horizontalPadding);
+            z-index: 99999;
+
+            .#{$componentName}-screen {
+                @include size($screenWidth $screenHeight);
+                background-image: asset-url($screenImage);
+                background-size: cover;
+                border-radius: 0.2em;
+                box-shadow: inset 0 1px 8px transparentize(black, 0.5);
+                margin: auto;
+            }
+        }
+    }
+}

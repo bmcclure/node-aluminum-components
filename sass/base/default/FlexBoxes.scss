@@ -1,0 +1,13 @@
+$FlexBoxes-topColors:
+    tomato,
+    #72BFBF,
+    #92B1E3,
+    #E3D743,
+    #CCC,
+    #F6C05C;
+
+@import "../mixins/FlexBoxes";
+
+@include FlexBoxes(
+    $topColors: $FlexBoxes-topColors
+);

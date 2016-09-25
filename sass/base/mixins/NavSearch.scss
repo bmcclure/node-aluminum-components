@@ -1,0 +1,76 @@
+$base-borderColor: gainsboro !default;
+$base-borderRadius: 3px !default;
+$action-color: #477DCA !default;
+$darkGray: #333 !default;
+$large-screen: 53.75em !default;
+$horizontal-bar-mode: $large-screen;
+
+@mixin NavSearch(
+    $backgroundColor: $darkGray,
+    $color: transparentize(white, 0.3),
+    $background: lighten($backgroundColor, 5),
+    $border: 1px solid darken($backgroundColor, 5),
+    $horizontalBarMode: $horizontal-bar-mode,
+    $borderRadius: $base-borderRadius,
+    $searchInputBorderColor: $base-borderColor,
+    $inputBorderColor: $base-borderColor,
+    $inputBorder: 1px solid $inputBorderColor,
+    $inputBackground: lighten($inputBorderColor, 10%),
+    $componentName: "NavSearch"
+) {
+    .#{$componentName} {
+        float: left;
+        padding: 0.85em 0.85em 0.7em 0.6em;
+        width: 60%;
+
+        .#{$componentName}-form {
+            position: relative;
+
+            .#{$componentName}-input {
+                background: $background;
+                border: $border;
+                border-radius: $borderRadius * 2;
+                box-sizing: border-box;
+                color: $color;
+                font-size: 0.9em;
+                font-style: italic;
+                margin: 0;
+                padding: 0.5em 0.8em;
+                width: 100%;
+
+                @include media($horizontalBarMode) {
+                    width: 100%;
+                }
+            }
+
+            .#{$componentName}-button {
+                background: $background;
+                border: 0;
+                bottom: 0.3em;
+                left: auto;
+                outline: none;
+                padding: 0 9px;
+                position: absolute;
+                right: 0.3em;
+                top: 0.3em;
+
+                .#{$componentName}-icon {
+                    height: 12px;
+                    opacity: 0.7;
+                    padding: 1px;
+                }
+            }
+        }
+
+        @include media($horizontalBarMode) {
+            display: inline-block;
+            position: relative;
+            width: 16em;
+
+            .#{$componentName}-input {
+                box-sizing: border-box;
+                display: block;
+            }
+        }
+    }
+}
