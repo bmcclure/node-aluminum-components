@@ -1,6 +1,6 @@
 {
     "name": "aluminum-components",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "A set of reusable web components (JS, SCSS mixins and styles, and template examples) for quickly building custom themes and web applications.",
     "license": "MIT",
     "repository": {
@@ -14,8 +14,8 @@
     },
     "files": [
         "index.js",
-        "sass",
-        "js"
+        "assets",
+        "sass"
     ],
     "engines": {
         "node": ">=0.10.0"
