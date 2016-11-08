@@ -1,0 +1,105 @@
+// Base variables
+$darkGray: #333 !default;
+$lightGray: #D4D4D4 !default;
+$color-border: $lightGray !default;
+$lineHeight-base: 1.5em !default;
+$spacing-base: 1.5em !default;
+$color-background: white !default;
+$color-accent: #477DCA !default;
+$color-link: $color-accent !default;
+$fontColor-base: $darkGray !default;
+$fontSize-base: .8em !default;
+$gutter: 0 !default;
+$screen-medium: em(640) !default;
+$screen-large: em(860) !default;
+
+// Component variables
+$LocalTasks-linkColor: $darkGray !default;
+$LocalTasks-tabBorder: 1px solid $color-border !default;
+$LocalTasks-background: $color-background !default;
+$LocalTasks-background--active: $color-background !default;
+$LocalTasks-hoverColor: silver !default;
+$LocalTasks-mode: $screen-medium !default;
+
+.LocalTasks {
+    .LocalTasks-list {
+        @include clearfix;
+        line-height: $lineHeight-base;
+        padding: 0;
+        margin: 5px 0;
+    }
+
+    .LocalTasks-item {
+        list-style: none;
+    }
+}
+
+.LocalTasks--primary {
+    .LocalTasks-list {
+        border-bottom: $LocalTasks-tabBorder;
+    }
+
+    .LocalTasks-item {
+        border-top: $LocalTasks-tabBorder;
+
+        @include media($LocalTasks-mode) {
+            display: inline;
+        }
+
+        a {
+            background-color: $LocalTasks-background;
+            border-top: $LocalTasks-tabBorder;
+            color: $LocalTasks-linkColor;
+            display: block;
+            font-weight: 400;
+            padding: ($spacing-base / 2) $gutter;
+            text-decoration: none;
+
+            @include media($LocalTasks-mode) {
+                display: inline-block;
+                border-top: 0;
+            }
+
+            &:hover {
+                color: $color-link;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .LocalTasks-item--active {
+        a {
+            border-bottom: 0;
+
+            @include media($LocalTasks-mode) {
+                border: $LocalTasks-tabBorder;
+                border-bottom-color: $LocalTasks-background--active;
+                margin-bottom: -1px;
+            }
+        }
+    }
+}
+
+.LocalTasks--secondary {
+    .LocalTasks-item {
+        float: left;
+        border-right: 1px solid $lightGray;
+
+        &:last-child {
+            border-right: none;
+        }
+
+        a {
+            cursor: pointer;
+            display: inline-block;
+            font-size: $fontSize-base;
+            font-weight: normal;
+            line-height: 1;
+            padding: 0.75em 1em;
+            width: 100%;
+        }
+    }
+}

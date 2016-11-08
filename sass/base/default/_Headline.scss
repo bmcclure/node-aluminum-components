@@ -1,0 +1,15 @@
+// Base variables
+$darkGray: #555 !default;
+$fontSize-h1: 1.6em !default;
+
+// Component variables
+$Headline-fontSize: $fontSize-h1 !default;
+$Headline-fontColor: $darkGray !default;
+$Headline-margin: 0 0 0.5em !default;
+
+.Headline {
+  font-size: $Headline-fontSize;
+  color: $Headline-fontColor;
+  display: inline-block;
+  margin: $Headline-margin;
+}

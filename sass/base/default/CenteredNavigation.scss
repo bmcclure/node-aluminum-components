@@ -1,5 +1,5 @@
-$large-screen: 53.75em !default;
-$horizontal-bar-mode: $large-screen !default;
+$screen-large: 53.75em !default;
+$mode-horizontalBar: $screen-large !default;
 
 $CenteredNavigation-borderColor: #ced8d3 !default;
 $CenteredNavigation-padding: 1em !default;
@@ -9,7 +9,7 @@ $CenteredNavigation-itemPadding: 1em !default;
 $CenteredNavigation-subMenuPadding: 1em !default;
 $CenteredNavigation-subMenuWidth: 12em !default;
 $CenteredNavigation-itemNudge: 2.2em !default;
-$CenteredNavigation-horizontalBarMode: $horizontal-bar-mode !default;
+$CenteredNavigation-horizontalBarMode: $mode-horizontalBar !default;
 
 @import "../mixins/CenteredNavigation";
 
@@ -22,5 +22,5 @@ $CenteredNavigation-horizontalBarMode: $horizontal-bar-mode !default;
     $subMenuPadding: $CenteredNavigation-subMenuPadding,
     $subMenuWidth: $CenteredNavigation-subMenuWidth,
     $itemNudge: $CenteredNavigation-itemNudge,
-    $horizontalBarMode: $horizontal-bar-mode
+    $horizontalBarMode: $mode-horizontalBar
 );

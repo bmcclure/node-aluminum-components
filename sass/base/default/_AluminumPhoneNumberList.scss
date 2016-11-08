@@ -1,0 +1,35 @@
+// Base variables
+$spacing-fixed: 1.5rem !default;
+$fontSize-base: 1em !default;
+
+// Component variables
+$AluminumPhoneNumberList-marginLeft: $spacing-fixed !default;
+$AluminumPhoneNumberList-color: white !default;
+$AluminumPhoneNumberList-fontSize: $fontSize-base !default;
+$AluminumPhoneNumberList-itemMargin: 0 !default;
+
+.AluminumPhoneNumberList {
+  margin-left: $AluminumPhoneNumberList-marginLeft;
+  color: $AluminumPhoneNumberList-color;
+  font-size: $AluminumPhoneNumberList-fontSize;
+
+  .AluminumPhoneNumberList-title {
+    float: left;
+    clear: both;
+    font-weight: normal;
+    margin: $AluminumPhoneNumberList-itemMargin;
+  }
+
+  .AluminumPhoneNumberList-title::after {
+    padding: 0 0.5em;
+    content: "\2022";
+  }
+
+  .AluminumPhoneNumberList-definition {
+    float: left;
+  }
+
+  .AluminumPhoneNumberList-link {
+    color: $AluminumPhoneNumberList-color;
+  }
+}

@@ -2,8 +2,8 @@ $base-borderColor: #dcdcdc !default;
 $base-backgroundColor: #fff !default;
 $action-color: #477dca !default;
 $darkGray: #333 !default;
-$medium-screen: 40em !default;
-$tab-mode: $medium-screen !default;
+$screen-medium: 40em !default;
+$tab-mode: $screen-medium !default;
 $base-spacing: 1.5em !default;
 $base-borderRadius: 3px !default;
 $lightGray: #ddd !default;
@@ -21,7 +21,7 @@ $AccordionTabs-borderRadius: $base-borderRadius !default;
 @import "../mixins/AccordionTabs";
 
 @include AccordionTabs(
-    $tabMode: $medium-screen,
+    $tabMode: $screen-medium,
     $tabGutter: $gutter,
     $spacing: $base-spacing,
     $tabColor: $darkGray,

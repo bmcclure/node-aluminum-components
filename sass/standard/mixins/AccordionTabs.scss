@@ -1,12 +1,12 @@
 $base-spacing: 1.5em !default;
 $base-borderRadius: 3px !default;
 $lightGray: #ddd !default;
-$medium-screen: 40em !default;
+$screen-medium: 40em !default;
 $base-borderColor: #dcdcdc !default;
-$tab-mode: $medium-screen !default;
+$mode-tab: $screen-medium !default;
 
 @mixin AccordionTabs--standard(
-    $tabMode: $medium-screen,
+    $tabMode: $screen-medium,
     $tabGutter: $gutter,
     $spacing: $base-spacing,
     $tabBorder: 1px solid $base-borderColor,

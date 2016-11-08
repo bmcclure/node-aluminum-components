@@ -1,0 +1,11 @@
+// Base variables
+$mediumGray: #555 !default;
+
+// Component variables
+$Breadcrumb-color: $mediumGray !default;
+$Breadcrumb-padding: 0.5em 0 !default;
+
+.Breadcrumb {
+  color: $Breadcrumb-color;
+  padding: $Breadcrumb-padding;
+}

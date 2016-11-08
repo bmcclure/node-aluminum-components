@@ -1,0 +1,31 @@
+// Base variables
+$lightGray: #dcdcdc !default;
+$mediumGray: #555 !default;
+$darkGray: #333 !default;
+$blue: #477dca !default;
+$color-action: $blue !default;
+$color-actionAccent: white !default;
+$color-border: $lightGray !default;
+$color-background: white !default;
+$color-background--medium: $mediumGray !default;
+$borderWidth-base: 1px !default;
+$borderStyle-base: solid !default;
+$screen-medium: 40em !default;
+$mode-tab: $screen-medium !default;
+
+// Component variables
+$AccordionTabs-tabColor: $color-actionAccent !default;
+$AccordionTabs-tabColor--hover: $AccordionTabs-tabColor !default;
+$AccordionTabs-tabBorder: $borderWidth-base $borderStyle-base $color-border !default;
+$AccordionTabs-tabBackground: $color-action !default;
+$AccordionTabs-tabBackground--active: $color-background--medium !default;
+$AccordionTabs-tabMode: $mode-tab !default;
+
+@include AccordionTabs(
+    $tabMode: $AccordionTabs-tabMode,
+    $tabColor: $AccordionTabs-tabColor,
+    $tabColor--hover: $AccordionTabs-tabColor--hover,
+    $tabBorder: $AccordionTabs-tabBorder,
+    $tabBackground: $AccordionTabs-tabBackground,
+    $tabBackground--active: $AccordionTabs-tabBackground--active
+);

@@ -2,8 +2,8 @@ $base-borderColor: gainsboro !default;
 $base-borderRadius: 3px !default;
 $action-color: #477DCA !default;
 $darkGray: #333 !default;
-$large-screen: 53.75em !default;
-$horizontal-bar-mode: $large-screen;
+$screen-large: 53.75em !default;
+$horizontal-bar-mode: $screen-large;
 
 @mixin NavSearch(
     $backgroundColor: $darkGray,

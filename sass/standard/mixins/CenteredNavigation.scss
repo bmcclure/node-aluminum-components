@@ -1,12 +1,12 @@
 $darkGray: #333 !default;
 $base-borderRadius: 3px !default;
 $base-fontColor: $darkGray !default;
-$large-screen: 53.75em !default;
-$horizontal-bar-mode: $large-screen !default;
+$screen-large: 53.75em !default;
+$mode-horizontalBar: $screen-large !default;
 $base-borderColor: #E7F1EC;
 
 @mixin CenteredNavigation--standard(
-    $horizontalBarMode: $horizontal-bar-mode,
+    $horizontalBarMode: $mode-horizontalBar,
     $color: transparentize($base-fontColor, 0.3),
     $color--hover: $base-fontColor,
     $background: lighten($base-borderColor, 6%),

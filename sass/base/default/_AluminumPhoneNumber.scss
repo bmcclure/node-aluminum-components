@@ -1,0 +1,22 @@
+// Base variables
+$heading-fontFamily: sans-serif !default;
+$color-action: #477dca !default;
+
+// Component variables
+$AluminumPhoneNumber-color: $color-action !default;
+$AluminumPhoneNumber-fontSize: 1.2em !default;
+$AluminumPhoneNumber-fontFamily: $heading-fontFamily !default;
+
+.AluminumPhoneNumber {
+  font-size: $AluminumPhoneNumber-fontSize;
+  font-family: $AluminumPhoneNumber-fontFamily;
+
+  .AluminumPhoneNumber-link {
+    color: $AluminumPhoneNumber-color;
+    cursor: text;
+
+    &:hover {
+      color: $AluminumPhoneNumber-color;
+    }
+  }
+}

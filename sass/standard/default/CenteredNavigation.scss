@@ -1,8 +1,8 @@
 $darkGray: #333 !default;
 $base-borderRadius: 3px !default;
 $base-fontColor: $darkGray !default;
-$large-screen: 53.75em !default;
-$horizontal-bar-mode: $large-screen !default;
+$screen-large: 53.75em !default;
+$horizontal-bar-mode: $screen-large !default;
 
 $CenteredNavigation-padding: 1em !default;
 $CenteredNavigation-logoHeight: 2em !default;
@@ -14,7 +14,7 @@ $CenteredNavigation-itemNudge: 2.2em !default;
 $CenteredNavigation-color: transparentize($base-fontColor, 0.3) !default;
 $CenteredNavigation-color--hover: $base-fontColor !default;
 $CenteredNavigation-borderColor: #E7F1EC !default;
-$CenteredNavigation-breakpoint: $large-screen !default;
+$CenteredNavigation-breakpoint: $screen-large !default;
 $CenteredNavigation-background: lighten($CenteredNavigation-borderColor, 6%) !default;
 $CenteredNavigation-horizontalBarMode: $horizontal-bar-mode !default;
 

@@ -1,4 +1,4 @@
-$large-screen: 53.75em !default;
+$screen-large: 53.75em !default;
 
 @mixin Device(
     $screenImage,
@@ -7,7 +7,7 @@ $large-screen: 53.75em !default;
     $screenHeight: 25em,
     $verticalPadding: 5em,
     $horizontalPadding: 0.4em,
-    $breakpoint: $large-screen,
+    $breakpoint: $screen-large,
     $componentName: "Device"
 ) {
     .#{$componentName} {

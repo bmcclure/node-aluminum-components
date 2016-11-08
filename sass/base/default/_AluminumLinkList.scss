@@ -1,0 +1,36 @@
+// Base variables
+$darkGray: #555 !default;
+$blue: #477dca !default;
+$fontWeight-bold: 600 !default;
+
+// Component variables
+$AluminumLinkList-border: 1px solid $darkGray !default;
+$AluminumLinkList-padding: 0.25em 0 !default;
+$AluminumLinkList-textColor: $darkGray !default;
+$AluminumLinkList-iconColor: $blue !default;
+$AluminumLinkList-fontWeight: $fontWeight-bold !default;
+$AluminumLinkList-marginBottom: 1em !default;
+
+.AluminumLinkList {
+  border: $AluminumLinkList-border;
+  border-right-style: none;
+  border-left-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: $AluminumLinkList-padding;
+  margin-bottom: $AluminumLinkList-marginBottom;
+
+  .AluminumLinkList-item {
+    display: inline-block;
+  }
+
+  .AluminumLinkList-link {
+    color: $AluminumLinkList-textColor;
+    font-weight: $AluminumLinkList-fontWeight;
+  }
+
+  .AluminumLinkList-icon {
+    padding-left: 0.5em;
+    color: $AluminumLinkList-iconColor;
+  }
+}

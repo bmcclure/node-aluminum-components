@@ -1,0 +1,17 @@
+// Base variables
+$mediumGray: #555 !default;
+$color-background--medium: $mediumGray !default;
+$fontColor-footer: white !default;
+
+// Component variables
+$Footer-color: $fontColor-footer !default;
+$Footer-background: $color-background--medium !default;
+$Footer-margin: 1em 0 0 0 !default;
+$Footer-fontSize: 1em !default;
+
+.Footer {
+    background: $Footer-background;
+    color: $Footer-color;
+    margin: $Footer-margin;
+    font-size: $Footer-fontSize;
+}

@@ -1,19 +1,21 @@
-$medium-screen: 40em !default;
-$base-backgroundColor: #fff !default;
-$base-borderColor: #dcdcdc !default;
+// Base variables
+$screen-medium: 40em !default;
+$lightGray: #dcdcdc !default;
 $darkGray: #333 !default;
+$color-background: white !default;
+$color-border: $lightGray !default;
 $base-spacing: 1.5em !default;
-$action-color: #477dca !default;
+$color-action: #477dca !default;
 
 @mixin AccordionTabs(
-    $tabMode: $medium-screen,
+    $tabMode: $screen-medium,
     $tabGutter: $gutter,
     $spacing: $base-spacing,
     $tabColor: $darkGray,
-    $tabColor--hover: $action-color,
-    $tabBorder: 1px solid $base-borderColor,
-    $tabBackground: $base-backgroundColor,
-    $tabBackground--active: $base-backgroundColor,
+    $tabColor--hover: $color-action,
+    $tabBorder: 1px solid $color-border,
+    $tabBackground: $color-background,
+    $tabBackground--active: $color-background,
     $componentName: "AccordionTabs"
 ) {
     .#{$componentName} {
@@ -31,7 +33,8 @@ $action-color: #477dca !default;
 
         .#{$componentName}-tabHeader {
             background-color: $tabBackground;
-            border-top: $tabBorder;
+            border-right: $tabBorder;
+            border-bottom: $tabBorder;
             color: $tabColor;
             display: block;
             padding: ($spacing / 2) $tabGutter;
@@ -43,18 +46,20 @@ $action-color: #477dca !default;
             }
 
             &:hover {
-                color: $action-color;
+                color: $tabColor--hover;
             }
 
             &:focus {
                 outline: none;
             }
 
-            &.is-active {
-                border-bottom: 0;
+            &:last-child {
+                border-right: 0;
+            }
 
+            &.is-active {
                 @include media($tabMode) {
-                    border: $tabBorder;
+                    background-color: $tabBackground--active;
                     border-bottom-color: $tabBackground--active;
                     margin-bottom: -1px;
                 }

@@ -1,0 +1,57 @@
+// Base variables
+$lightGray: #eee !default;
+$color-footerText: white !default;
+$fontSize-base: 1em !default;
+$fontWeight-base: 400 !default;
+
+@mixin InlineMenu(
+    $fontSize: $fontSize-base,
+    $fontColor: $color-footerText,
+    $fontColor--active: $color-footerText,
+    $fontWeight: $fontWeight-base,
+    $background: transparent,
+    $background--active: transparent,
+    $textTransform: none,
+    $separatorColor: $lightGray,
+    $separatorWidth: 0,
+    $textAlign: middle,
+    $margin: 0,
+    $itemPadding: 0 1em 0 0,
+    $linkPadding: 0.25em,
+    $componentName: "Menu",
+    $modifier: "inline"
+) {
+    #{$componentName}.#{$componentName}--#{$modifier} {
+        font-size: $fontSize;
+        text-transform: $textTransform;
+        margin: $margin;
+
+        #{$componentName}-list {
+            text-align: $textAlign;
+            font-weight: $fontWeight;
+        }
+
+        #{$componentName}-item {
+            display: inline;
+            padding: $itemPadding;
+            border-right: $separatorWidth solid $separatorColor;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+
+        #{$componentName}-link {
+            color: $fontColor;
+            padding: $linkPadding;
+            background: $background;
+
+            &:hover,
+            &:active,
+            &.Menu-link--active {
+                color: $fontColor--active;
+                background: $background--active;
+            }
+        }
+    }
+}

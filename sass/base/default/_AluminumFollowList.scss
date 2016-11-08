@@ -1,0 +1,38 @@
+// Base variables
+$blue: #477dca !default;
+$mediumGray: #888 !default;
+$color-action: $blue !default;
+$color-background--medium: $mediumGray !default;
+$color-actionAccent: white !default;
+$color-background: white !default;
+
+// Component variables
+$AluminumFollowList-linkColor: $color-actionAccent !default;
+$AluminumFollowList-linkColor--active: $color-action !default;
+$AluminumFollowList-backgroundColor: $color-background--medium !default;
+$AluminumFollowList-backgroundColor--active: $color-background !default;
+$AluminumFollowList-fontSize: 1.6em !default;
+
+.AluminumFollowList {
+  font-size: $AluminumFollowList-fontSize;
+
+  .AluminumFollowList-item {
+    display: inline-block;
+  }
+
+  .AluminumFollowList-link {
+    color: $AluminumFollowList-linkColor;
+
+    .fa-circle {
+      color: $AluminumFollowList-backgroundColor;
+    }
+
+    &:hover {
+      color: $AluminumFollowList-linkColor--active;
+
+      .fa-circle {
+        color: $AluminumFollowList-backgroundColor--active;
+      }
+    }
+  }
+}

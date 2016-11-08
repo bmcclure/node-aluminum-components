@@ -1,6 +1,5 @@
-
-$large-screen: 53.75em !default;
-$horizontal-bar-mode: $large-screen !default;
+$screen-large: 53.75em !default;
+$mode-horizontalBar: $screen-large !default;
 
 @mixin CenteredNavigation(
     $borderColor: #ced8d3,
@@ -11,8 +10,8 @@ $horizontal-bar-mode: $large-screen !default;
     $subMenuPadding: 1em,
     $subMenuWidth: 12em,
     $itemNudge: 2.2em,
-    $breakpoint: $large-screen,
-    $horizontalBarMode: $horizontal-bar-mode,
+    $breakpoint: $screen-large,
+    $horizontalBarMode: $mode-horizontalBar,
     $componentName: "CenteredNavigation"
 ) {
     .#{$componentName} {

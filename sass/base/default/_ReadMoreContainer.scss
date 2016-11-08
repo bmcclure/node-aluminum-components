@@ -1,0 +1,41 @@
+$blue: #477dca !default;
+$action-color: $blue !default;
+
+$ReadMoreContainer-height: 20em !default;
+$ReadMoreContainer-buttonColor: $action-color !default;
+$ReadMoreContainer-buttonTransform: uppercase !default;
+$ReadMoreContainer-bottomHeight: 5em !default;
+$ReadMoreContainer-bottomBackground: linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 40%, rgba(255, 255, 255, 0));
+
+.ReadMoreContainer {
+  position: relative;
+
+  .ReadMoreContainer-content {
+    height: auto;
+    margin-bottom: 2.5em;
+    overflow: hidden;
+  }
+
+  .ReadMoreContainer-bottom {
+    height: $ReadMoreContainer-bottomHeight;
+    background: none;
+    position: absolute;
+    bottom: -1.5em;
+    left: 0;
+    right: 0;
+    display: none;
+  }
+
+  .ReadMoreContainer-button {
+    color: $ReadMoreContainer-buttonColor;
+    text-transform: $ReadMoreContainer-buttonTransform;
+    position: absolute;
+    bottom: 0;
+  }
+
+  &.is-closed {
+    .ReadMoreContainer-bottom {
+      background: $ReadMoreContainer-bottomBackground;
+    }
+  }
+}

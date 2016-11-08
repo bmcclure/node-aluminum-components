@@ -1,0 +1,9 @@
+// Base variables;
+$color-background: white !default;
+
+// Component variables
+$Body-backgroundColor: $color-background !default;
+
+body {
+  background-color: $Body-backgroundColor;
+}

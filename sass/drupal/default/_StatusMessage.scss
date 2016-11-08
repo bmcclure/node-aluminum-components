@@ -1,0 +1,28 @@
+// Base variables
+$spacing-base: 1.5em !default;
+$borderRadius-base: 0 !default;
+
+// Component variables
+$StatusMessage-alertColor: #fff6bf !default;
+$StatusMessage-errorColor: #fbe3e4 !default;
+$StatusMessage-noticeColor: #e5edf8 !default;
+$StatusMessage-successColor: #e6efc2 !default;
+$StatusMessage-borderRadius: $borderRadius-base !default;
+
+.StatusMessage {
+  &.StatusMessage--error {
+    @include flash($StatusMessage-errorColor);
+  }
+
+  &.StatusMessage--status {
+    @include flash($StatusMessage-successColor);
+  }
+
+  &.StatusMessage--notice {
+    @include flash($StatusMessage-noticeColor);
+  }
+
+  &.StatusMessage--warning {
+    @include flash($StatusMessage-alertColor);
+  }
+}

@@ -1,8 +1,8 @@
-$large-screen: 53.75em !default;
+$screen-large: 53.75em !default;
 
 @mixin DeviceTeaser(
     $minHeight: 20em,
-    $breakpoint: $large-screen,
+    $breakpoint: $screen-large,
     $componentName: "DeviceTeaser"
 ) {
     .#{$componentName} {

@@ -1,0 +1,9 @@
+// Base variables
+$color-background: white !default;
+
+// Component variables
+$Page-backgroundColor: $color-background !default;
+
+.Page {
+  background-color: $Page-backgroundColor;
+}
