@@ -21,17 +21,17 @@ $fontWeight-base: 400 !default;
     $componentName: "Menu",
     $modifier: "inline"
 ) {
-    #{$componentName}.#{$componentName}--#{$modifier} {
+    .#{$componentName}.#{$componentName}--#{$modifier} {
         font-size: $fontSize;
         text-transform: $textTransform;
         margin: $margin;
 
-        #{$componentName}-list {
+        .#{$componentName}-list {
             text-align: $textAlign;
             font-weight: $fontWeight;
         }
 
-        #{$componentName}-item {
+        .#{$componentName}-item {
             display: inline;
             padding: $itemPadding;
             border-right: $separatorWidth solid $separatorColor;
@@ -41,7 +41,7 @@ $fontWeight-base: 400 !default;
             }
         }
 
-        #{$componentName}-link {
+        .#{$componentName}-link {
             color: $fontColor;
             padding: $linkPadding;
             background: $background;
