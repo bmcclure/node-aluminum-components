@@ -10,6 +10,6 @@ $Headline-margin: 0 0 0.5em !default;
 .Headline {
   font-size: $Headline-fontSize;
   color: $Headline-fontColor;
-  display: inline-block;
+  display: block;
   margin: $Headline-margin;
 }
