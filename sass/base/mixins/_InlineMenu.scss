@@ -48,7 +48,8 @@ $fontWeight-base: 400 !default;
 
             &:hover,
             &:active,
-            &.Menu-link--active {
+            &.Menu-link--active,
+            &.Menu-link--activeTrail {
                 color: $fontColor--active;
                 background: $background--active;
             }
