@@ -73,8 +73,11 @@ $color-action: #477dca !default;
             width: 100%;
 
             @include media($tabMode) {
-                border-top: $tabBorder;
                 float: left;
+
+                &.is-open {
+                    border-top: $tabBorder;
+                }
             }
 
             &.is-open {
