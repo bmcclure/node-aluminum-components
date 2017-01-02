@@ -8,7 +8,7 @@ $(document).ready(function () {
         $(this)
             .children('.AccordionTabs-tabContainer').first()
             .children('.AccordionTabs-tabHeader').addClass('is-active')
-            .next().addClass('is-open').show();
+            .next().addClass('is-open');
     });
 
     tabs.on('click', ' > .AccordionTabs-tabContainer > .AccordionTabs-tabHeader', function(event) {
