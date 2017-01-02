@@ -69,7 +69,7 @@ $color-action: #477dca !default;
         .#{$componentName}-tabContent {
             overflow: hidden;
             height: 0;
-            padding: $spacing $tabGutter;
+            padding: 0 $tabGutter;
             width: 100%;
 
             @include media($tabMode) {
@@ -79,6 +79,8 @@ $color-action: #477dca !default;
 
             &.is-open {
                 height: auto;
+                padding-top: $spacing;
+                padding-bottom: $spacing;
             }
         }
     }
