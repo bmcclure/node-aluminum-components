@@ -67,13 +67,18 @@ $color-action: #477dca !default;
         }
 
         .#{$componentName}-tabContent {
-            display: none;
+            overflow: hidden;
+            height: 0;
             padding: $spacing $tabGutter;
             width: 100%;
 
             @include media($tabMode) {
                 border-top: $tabBorder;
                 float: left;
+            }
+
+            &.is-open {
+                height: auto;
             }
         }
     }

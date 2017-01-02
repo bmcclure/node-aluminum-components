@@ -18,8 +18,8 @@ $(document).ready(function () {
         if (!tabHeader.hasClass('is-active')) {
             var accordionTabs = tabHeader.closest('.AccordionTabs');
 
-            accordionTabs.find('.is-open').removeClass('is-open').hide();
-            tabHeader.next().toggleClass('is-open').toggle();
+            accordionTabs.find('.is-open').removeClass('is-open');
+            tabHeader.next().toggleClass('is-open');
             accordionTabs.find('.is-active').removeClass('is-active');
             tabHeader.addClass('is-active');
         }
