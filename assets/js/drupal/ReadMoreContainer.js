@@ -40,8 +40,6 @@
 
                 content.css({height: height});
                 var newHeight = content.height();
-                console.log(originalHeight);
-                console.log(newHeight);
 
                 if (newHeight > originalHeight - 30) {
                     content.css({height: 'auto'});
