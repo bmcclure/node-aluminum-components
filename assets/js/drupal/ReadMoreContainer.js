@@ -36,13 +36,15 @@
                 var height = item.data('height') || '13em';
                 var content = getReadMoreContent(item);
                 var bottom = getReadMoreBottom(item);
-                var originalHeight = content.innerHeight();
+                var originalHeight = content.height();
 
                 content.css({height: height});
-                var newHeight = content.innerHeight();
+                var newHeight = content.height();
+                console.log(originalHeight);
+                console.log(newHeight);
 
                 if (newHeight > originalHeight - 30) {
-                    content.css({height: originalHeight + 'px'});
+                    content.css({height: 'auto'});
                     item.addClass('is-disabled');
                 } else {
                     item.data('originalHeight', originalHeight + 'px');
@@ -57,7 +59,7 @@
 
                 var container = readMoreButton.parent().parent();
                 var closed = container.hasClass('is-closed');
-                var content = getReadMoreContent(container)
+                var content = getReadMoreContent(container);
                 var html = closed ? '<i class="fa fa-minus-circle"></i> Read Less' : '<i class="fa fa-plus-circle"></i> Read More';
                 var newHeight = closed ? container.data('originalHeight') : container.data('height') || '13em';
 
