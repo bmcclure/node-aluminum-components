@@ -59,12 +59,11 @@
                 var closed = container.hasClass('is-closed');
                 var content = getReadMoreContent(container);
                 var html = closed ? '<i class="fa fa-minus-circle"></i> Read Less' : '<i class="fa fa-plus-circle"></i> Read More';
-                var newHeight = closed ? container.data('originalHeight') : container.data('height') || '13em';
+                var newHeight = closed ? 'auto' : container.data('height') || '13em';
 
-                content.animate({height: newHeight}, 500, function () {
-                    readMoreButton.html(html);
-                    container.toggleClass('is-closed', !closed);
-                });
+                content.css({height: newHeight});
+                readMoreButton.html(html);
+                container.toggleClass('is-closed', !closed);
             });
         }
     };
