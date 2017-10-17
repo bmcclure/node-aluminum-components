@@ -27,27 +27,42 @@
         return readMoreContainer;
     }
 
+    function setReadMoreContainerAttributes(readMoreContainer) {
+        var item = $(readMoreContainer);
+        var height = item.data('height') || '13em';
+        var content = getReadMoreContent(item);
+        var bottom = getReadMoreBottom(item);
+        var originalHeight = content.height();
+
+        content.css({height: height});
+        var newHeight = content.height();
+
+        if (newHeight > originalHeight - 30) {
+            content.css({height: 'auto'});
+            item.addClass('is-disabled');
+        }
+        else {
+            item.data('originalHeight', originalHeight + 'px');
+            bottom.css({display: 'block'});
+            item.toggleClass('is-closed', true);
+        }
+    }
+
     Drupal.behaviors.readMoreContainer = {
         attach: function (context, settings) {
             var readMoreContainers = $('.ReadMoreContainer', context);
 
             readMoreContainers.each(function () {
                 var item = $(this);
-                var height = item.data('height') || '13em';
                 var content = getReadMoreContent(item);
-                var bottom = getReadMoreBottom(item);
                 var originalHeight = content.height();
 
-                content.css({height: height});
-                var newHeight = content.height();
-
-                if (newHeight > originalHeight - 30) {
-                    content.css({height: 'auto'});
-                    item.addClass('is-disabled');
+                if (originalHeight) {
+                    setReadMoreContainerAttributes(item);
                 } else {
-                    item.data('originalHeight', originalHeight + 'px');
-                    bottom.css({display: 'block'});
-                    item.toggleClass('is-closed', true);
+                    setTimeout(function () {
+                        setReadMoreContainerAttributes(item);
+                    }, 500);
                 }
             });
 
